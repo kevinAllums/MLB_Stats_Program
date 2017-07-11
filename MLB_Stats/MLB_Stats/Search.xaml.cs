@@ -144,14 +144,12 @@ namespace MLB_Stats
 
         private void executeTeamSearchButton_Click(object sender, RoutedEventArgs e)
         {
-            // NEED TO DO A CHECK TO MAKE SURE A CHOICE IS MADE
-
             if (yearComboBox.SelectedItem != null && teamComboBox.SelectedItem != null)
             {
                 Console.WriteLine(year + " " + teamName);
 
-                //TeamStatsWindow teamStats = new TeamStatsWindow(year, teamName);
-                //teamStats.Show();
+                TeamStatsWindow teamStats = new TeamStatsWindow(year, teamName);
+                teamStats.Show();
 
                 this.Close();
             }
@@ -211,7 +209,6 @@ namespace MLB_Stats
 
             if (!name.Contains(' '))
             {
-                // treat name as possibly first or lastName
                 nameFirst = name;
             }
             else
@@ -238,12 +235,8 @@ namespace MLB_Stats
             string resultToAdd;
             int longestResult = 0;
             int numberInList = 0;
-            // playerID, nameFirst, nameLast, position, debut, finalGame
             for (int i = 0; i < numberRows; i++, numberInList++)
             {
-
-                // TODO: get Managers active years from managers table
-                // to prevent managers from being shown
                 if (players.Rows[i][3].ToString() == "M")
                 {
                     --numberInList;
@@ -260,8 +253,6 @@ namespace MLB_Stats
 
                     listView001.Items.Add(resultToAdd);
 
-                    //Console.WriteLine(numberInList + " - " + resultToAdd);
-
                     if (resultToAdd.Length > longestResult)
                     {
                         longestResult = resultToAdd.Length;
@@ -272,11 +263,9 @@ namespace MLB_Stats
                 }
                 catch (Exception ex)
                 {
-                    //Console.WriteLine("Shit fucked up.");
                     Console.WriteLine(ex.ToString());
                 }
             }
-            //Console.WriteLine(ListView001.Items.Count);
 
             if (!listView001.HasItems)
             {
@@ -298,9 +287,7 @@ namespace MLB_Stats
                 var item = listView001.SelectedItems[0];
                 int indexOfItem = listView001.SelectedIndex;
                 string playerID = string.Format("{0}", players.Rows[indexOfItem][0]);
-
-                //Console.WriteLine(string.Format("player \"{0}\" selected", playerID));
-
+                
                 PlayerStatsWindow playerStats = new PlayerStatsWindow(playerID);
                 playerStats.Show();
 

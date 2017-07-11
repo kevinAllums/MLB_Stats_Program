@@ -1,0 +1,40 @@
+﻿<Window x:Class="MLB_Stats.TeamStatsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MLB_Stats"
+        mc:Ignorable="d"
+        Title="TeamStatsWindow" Icon="/MLB_Stats;component/Images/b2.ico" Background="#FF034719" ResizeMode="CanMinimize" SizeToContent="WidthAndHeight">
+    <Grid>
+        <DockPanel>
+            <DockPanel x:Name="topDockPanel" Margin="0,0,0,0" DockPanel.Dock="Top" MinHeight="320">
+                <DockPanel.Background>
+                    <ImageBrush ImageSource="/MLB_Stats;component/Images/baseball2.jpg" Stretch="UniformToFill"  />
+                </DockPanel.Background>
+
+                <Label x:Name="yearAndTeamLabel" FontFamily="Yu Gothic UI Semibold" FontSize="24" FontWeight="Bold" Foreground="White" Content="Testing Stuff More Testing" DockPanel.Dock="Right" VerticalAlignment="Bottom"/>
+            </DockPanel>
+            <DockPanel x:Name="bottomDockPanel" DockPanel.Dock="Bottom">
+                <ScrollViewer x:Name="scrollViewer001" PreviewMouseWheel="ScrollViewerOnPreviewMouseWheel" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+                    <DockPanel x:Name="teamInfoPanel"  Margin="15">
+                        <Label x:Name="winnerLabel" FontFamily="Yu Gothic UI Semibold" FontSize="16" FontWeight="Bold" Foreground="White" Content="Testing Stuff More Testing" DockPanel.Dock="Top"/>
+
+                        <Label x:Name="teamBattingStatsLabel" Content="Batting Stats" Margin="0,10,0,0" FontFamily="Yu Gothic UI Semibold" FontSize="16" FontWeight="Bold" Foreground="White" DockPanel.Dock="Top"/>
+                        <DataGrid x:Name="teamBattingStatsDataGrid" FontFamily="Yu Gothic UI Semibold" GridLinesVisibility="Vertical" AlternatingRowBackground="#FFCBCBCB" AlternationCount="2" RowBackground="Gainsboro" HorizontalGridLinesBrush="Black" VerticalGridLinesBrush="#FF6C6C6C" HorizontalAlignment="Left" VerticalAlignment="Top" CanUserResizeRows="False" CanUserAddRows="False" CanUserDeleteRows="False" DockPanel.Dock="Top" IsReadOnly="True" CanUserResizeColumns="False"/>
+
+                        <Label x:Name="teamPitchingStatsLabel" Content="Pitching Stats" Margin="0,10,0,0" FontFamily="Yu Gothic UI Semibold" FontSize="16" FontWeight="Bold" Foreground="White" DockPanel.Dock="Top"/>
+                        <DataGrid x:Name="teamPitchingStatsDataGrid" FontFamily="Yu Gothic UI Semibold" GridLinesVisibility="Vertical" AlternatingRowBackground="#FFCBCBCB" AlternationCount="2" RowBackground="Gainsboro" HorizontalGridLinesBrush="Black" VerticalGridLinesBrush="#FF6C6C6C" HorizontalAlignment="Left" VerticalAlignment="Top" CanUserResizeRows="False" CanUserAddRows="False" CanUserDeleteRows="False" DockPanel.Dock="Top" IsReadOnly="True" CanUserResizeColumns="False"/>
+
+                        <Label x:Name="teamPostBattingStatsLabel" Content="Post Batting Stats" Margin="0,10,0,0" FontFamily="Yu Gothic UI Semibold" FontSize="16" FontWeight="Bold" Foreground="White" DockPanel.Dock="Top"/>
+                        <DataGrid x:Name="teamPostBattingStatsDataGrid" FontFamily="Yu Gothic UI Semibold" GridLinesVisibility="Vertical" AlternatingRowBackground="#FFCBCBCB" AlternationCount="2" RowBackground="Gainsboro" HorizontalGridLinesBrush="Black" VerticalGridLinesBrush="#FF6C6C6C" HorizontalAlignment="Left" VerticalAlignment="Top" CanUserResizeRows="False" CanUserAddRows="False" CanUserDeleteRows="False" DockPanel.Dock="Top" IsReadOnly="True" CanUserResizeColumns="False"/>
+
+                        <Label x:Name="teamPostPitchingStatsLabel" Content="Post Pitching Stats" Margin="0,10,0,0" FontFamily="Yu Gothic UI Semibold" FontSize="16" FontWeight="Bold" Foreground="White" DockPanel.Dock="Top"/>
+                        <DataGrid x:Name="teamPostPitchingStatsDataGrid" FontFamily="Yu Gothic UI Semibold" GridLinesVisibility="Vertical" AlternatingRowBackground="#FFCBCBCB" AlternationCount="2" RowBackground="Gainsboro" HorizontalGridLinesBrush="Black" VerticalGridLinesBrush="#FF6C6C6C" HorizontalAlignment="Left" VerticalAlignment="Top" CanUserResizeRows="False" CanUserAddRows="False" CanUserDeleteRows="False" DockPanel.Dock="Top" IsReadOnly="True" CanUserResizeColumns="False"/>
+
+                    </DockPanel>
+                </ScrollViewer>
+            </DockPanel>
+        </DockPanel>
+    </Grid>
+</Window>
