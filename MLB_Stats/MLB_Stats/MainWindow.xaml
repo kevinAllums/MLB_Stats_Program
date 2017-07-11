@@ -1,0 +1,19 @@
+﻿<Window x:Class="MLB_Stats.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MLB_Stats"
+        mc:Ignorable="d"
+        Title="Baseball Stats" Icon="/MLB_Stats;component/Images/b2.ico" Background="#FF034719" FontFamily="Yu Gothic UI Semibold" FontSize="16">
+    <Grid Background="#FF034719">
+        <DockPanel LastChildFill="False">
+            <Menu DockPanel.Dock="Top">
+                <MenuItem Header="_File" FontFamily="Yu Gothic UI Semibold">
+                    <MenuItem Header="_Exit" FontFamily="Yu Gothic UI Semibold" Click="MenuItem_Exit_Click"/>
+                </MenuItem>
+                <MenuItem Header="_New Search" FontFamily="Yu Gothic UI Semibold" Click="MenuItem_Search_Click"/>
+            </Menu>
+        </DockPanel>
+    </Grid>
+</Window>
