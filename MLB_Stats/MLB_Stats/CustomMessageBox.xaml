@@ -1,0 +1,15 @@
+﻿<Window x:Class="MLB_Stats.CustomMessageBox"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MLB_Stats"
+        mc:Ignorable="d"
+         Title="CustomMessageBox" Icon="/MLB_Stats;component/Images/b2.ico" Background="#FF034719" MaxWidth="450" SizeToContent="WidthAndHeight" ResizeMode="NoResize">
+    <Grid Margin="30">
+        <Border BorderThickness="4" BorderBrush="White" >
+            <TextBlock x:Name="messageTextBlock" Text="This is filler text!" FontSize="16" FontFamily="Yu Gothic UI Semibold" Foreground="White" Margin="5" TextWrapping="Wrap"/>
+        </Border>
+
+    </Grid>
+</Window>

@@ -74,6 +74,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="CustomMessageBox.xaml.cs">
+      <DependentUpon>CustomMessageBox.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Player.cs" />
     <Compile Include="PlayerStatsWindow.xaml.cs">
       <DependentUpon>PlayerStatsWindow.xaml</DependentUpon>
@@ -86,6 +89,10 @@
     <Compile Include="TeamStatsWindow.xaml.cs">
       <DependentUpon>TeamStatsWindow.xaml</DependentUpon>
     </Compile>
+    <Page Include="CustomMessageBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

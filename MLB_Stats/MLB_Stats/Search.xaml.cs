@@ -158,8 +158,8 @@ namespace MLB_Stats
                 Console.WriteLine("YEAR and TEAM need to be selected");
                 string typeOfMessage = "Error";
                 string message = "Please select a YEAR and TEAM to continue.";
-                //CustomMessageBox customMessageBox = new CustomMessageBox(typeOfMessage, message);
-                //customMessageBox.ShowDialog();
+                CustomMessageBox customMessageBox = new CustomMessageBox(typeOfMessage, message);
+                customMessageBox.ShowDialog();
             }
 
         }
@@ -182,31 +182,28 @@ namespace MLB_Stats
             {
                 string typeOfMessage = "Error";
                 string message = "At LEAST first two letters from either the players first OR last name are required to complete the search.";
-                //CustomMessageBox messageBox = new CustomMessageBox(typeOfMessage, message);
-                //messageBox.ShowDialog();
+                CustomMessageBox messageBox = new CustomMessageBox(typeOfMessage, message);
+                messageBox.ShowDialog();
             }
             // input can only be letter and spaces
             else if (!(r.IsMatch(input)))
             {
                 string typeOfMessage = "Error";
                 string message = "Please only use LETTERS. Use a SPACE to seperate first and last name.";
-                //CustomMessageBox messageBox = new CustomMessageBox(typeOfMessage, message);
-                //messageBox.ShowDialog();
+                CustomMessageBox messageBox = new CustomMessageBox(typeOfMessage, message);
+                messageBox.ShowDialog();
             }
             else
             {
                 SearchForMatchingPlayers(input);
             }
-
-
         }
 
         private void SearchForMatchingPlayers(string name)
         {
             string nameFirst = "";
             string nameLast = "";
-
-
+            
             if (!name.Contains(' '))
             {
                 nameFirst = name;
@@ -258,8 +255,6 @@ namespace MLB_Stats
                         longestResult = resultToAdd.Length;
                     }
                     listView001.Width = longestResult * 9;
-
-
                 }
                 catch (Exception ex)
                 {
@@ -300,8 +295,8 @@ namespace MLB_Stats
             string typeOfMessage = "Help";
             String message = "Select a YEAR and TEAM to show their statistics";
 
-            //CustomMessageBox customMessageBox = new CustomMessageBox(typeOfMessage, message);
-            //customMessageBox.ShowDialog();
+            CustomMessageBox customMessageBox = new CustomMessageBox(typeOfMessage, message);
+            customMessageBox.ShowDialog();
         }
 
         private void MenuItem_PlayerSearchHelp_Click(object sender, RoutedEventArgs e)
@@ -315,8 +310,8 @@ namespace MLB_Stats
                 "\tBa\n" +
                 "\tRu";
 
-            //CustomMessageBox customMessageBox = new CustomMessageBox(typeOfMessage, message);
-            //customMessageBox.ShowDialog();
+            CustomMessageBox customMessageBox = new CustomMessageBox(typeOfMessage, message);
+            customMessageBox.ShowDialog();
         }
     }
 }

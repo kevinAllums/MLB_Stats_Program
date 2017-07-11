@@ -36,8 +36,8 @@ namespace MLB_Stats
 
         private void MenuItem_Search_Click(object sender, RoutedEventArgs e)
         {
-            //Search search = new Search();
-            //search.ShowDialog();
+            Search search = new Search();
+            search.ShowDialog();
         }
     }
 }

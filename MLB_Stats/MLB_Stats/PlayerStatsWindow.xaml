@@ -12,7 +12,7 @@
                 <ImageBrush ImageSource="/MLB_Stats;component/Images/baseball2.jpg" Stretch="UniformToFill"  />
             </DockPanel.Background>
             <Border x:Name="border001" BorderThickness="10" MinWidth="210" MinHeight="320" MaxWidth="210" MaxHeight="320" BorderBrush="Black"  DockPanel.Dock="Left" HorizontalAlignment="Left" VerticalAlignment="Bottom">
-                <Image x:Name="playerHeadshotImage" MinWidth="212" MinHeight="320" MaxWidth="212" MaxHeight="320" HorizontalAlignment="Center" VerticalAlignment="Top" Stretch="UniformToFill" Source="/mlb_stats_test011;component/Images/PlayerHeadshots/default.png"/>
+                <Image x:Name="playerHeadshotImage" MinWidth="212" MinHeight="320" MaxWidth="212" MaxHeight="320" HorizontalAlignment="Center" VerticalAlignment="Top" Stretch="UniformToFill" Source="/MLB_Stats;component/Images/PlayerHeadshots/default.png"/>
             </Border>
 
             <Label x:Name="testLable" FontFamily="Yu Gothic UI Semibold" FontSize="24" FontWeight="Bold" Foreground="White" Content="Testing Stuff More Testing" DockPanel.Dock="Right" VerticalAlignment="Bottom"/>

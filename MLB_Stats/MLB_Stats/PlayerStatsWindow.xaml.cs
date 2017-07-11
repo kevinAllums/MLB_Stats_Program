@@ -68,10 +68,11 @@ namespace MLB_Stats
 
             if (photo != "")
             {
-                string source = string.Format("/mlb_stats_test011;component/Images/PlayerHeadshots/{0}", photo);
+                // removed images becuase of copywrite concerns
+                //string source = string.Format("/mlb_stats_test011;component/Images/PlayerHeadshots/{0}", photo);
 
-                var uriSource = new Uri(source, UriKind.Relative);
-                playerHeadshotImage.Source = new BitmapImage(uriSource);
+                //var uriSource = new Uri(source, UriKind.Relative);
+                //playerHeadshotImage.Source = new BitmapImage(uriSource);
             }
 
             string position = string.Format("\n{0}", player.BasicInfo.Rows[0][14].ToString());
@@ -88,7 +89,7 @@ namespace MLB_Stats
             }
             catch
             {
-                // shit fucked up
+                // oops
             }
 
             string heightAndWeight = string.Format(" | {0}/{1}",
