@@ -297,15 +297,12 @@ namespace MLB_Stats
             {
                 var item = listView001.SelectedItems[0];
                 int indexOfItem = listView001.SelectedIndex;
-                //Console.WriteLine(item);
-                //Console.WriteLine(ListView001.SelectedIndex);
-                //Console.WriteLine(players.Rows[indexOfItem][0]);
                 string playerID = string.Format("{0}", players.Rows[indexOfItem][0]);
 
                 //Console.WriteLine(string.Format("player \"{0}\" selected", playerID));
 
-                //PlayerStatsWindow playerStats = new PlayerStatsWindow(playerID);
-                //playerStats.Show();
+                PlayerStatsWindow playerStats = new PlayerStatsWindow(playerID);
+                playerStats.Show();
 
                 this.Close();
             }

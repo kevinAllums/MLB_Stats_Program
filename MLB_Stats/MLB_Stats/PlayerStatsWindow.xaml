@@ -1,0 +1,59 @@
+﻿<Window x:Class="MLB_Stats.PlayerStatsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MLB_Stats"
+        mc:Ignorable="d"
+        Title="PlayerStatsWindow" Icon="/MLB_Stats;component/Images/b2.ico" Background="#FF034719" ResizeMode="CanMinimize" SizeToContent="WidthAndHeight">
+    <DockPanel x:Name="mainDockPanel" >
+        <DockPanel x:Name="topDockPanel" Margin="0,0,0,0" DockPanel.Dock="Top">
+            <DockPanel.Background>
+                <ImageBrush ImageSource="/MLB_Stats;component/Images/baseball2.jpg" Stretch="UniformToFill"  />
+            </DockPanel.Background>
+            <Border x:Name="border001" BorderThickness="10" MinWidth="210" MinHeight="320" MaxWidth="210" MaxHeight="320" BorderBrush="Black"  DockPanel.Dock="Left" HorizontalAlignment="Left" VerticalAlignment="Bottom">
+                <Image x:Name="playerHeadshotImage" MinWidth="212" MinHeight="320" MaxWidth="212" MaxHeight="320" HorizontalAlignment="Center" VerticalAlignment="Top" Stretch="UniformToFill" Source="/mlb_stats_test011;component/Images/PlayerHeadshots/default.png"/>
+            </Border>
+
+            <Label x:Name="testLable" FontFamily="Yu Gothic UI Semibold" FontSize="24" FontWeight="Bold" Foreground="White" Content="Testing Stuff More Testing" DockPanel.Dock="Right" VerticalAlignment="Bottom"/>
+        </DockPanel>
+        <DockPanel x:Name="bottomDockPanel" DockPanel.Dock="Bottom">
+            <ScrollViewer x:Name="scrollViewer001" PreviewMouseWheel="ScrollViewerOnPreviewMouseWheel" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+                <DockPanel x:Name="dockPanel002"  Margin="15">
+                    <Label x:Name="testLable2" FontFamily="Yu Gothic UI Semibold" FontSize="16" FontWeight="Bold" Foreground="White" Content="Testing Stuff More Testing" DockPanel.Dock="Top"/>
+
+                    <Label x:Name="battingStatsLabel" Content="Regular Season Batting Stats:" Margin="0,10,0,0" FontFamily="Yu Gothic UI Semibold" FontSize="16" FontWeight="Bold" Foreground="White" DockPanel.Dock="Top"/>
+                    <DataGrid x:Name="battingStatsDataGrid" FontFamily="Yu Gothic UI Semibold" GridLinesVisibility="Vertical" AlternatingRowBackground="#FFCBCBCB" AlternationCount="2" RowBackground="Gainsboro" HorizontalGridLinesBrush="Black" VerticalGridLinesBrush="#FF6C6C6C" HorizontalAlignment="Left" VerticalAlignment="Top" CanUserResizeRows="False" CanUserAddRows="False" CanUserDeleteRows="False" DockPanel.Dock="Top" IsReadOnly="True" CanUserResizeColumns="False"/>
+                    <Label x:Name="battingTotalsLabel" Content="MLB Career Batting Stats" Margin="0,10,0,0" FontFamily="Yu Gothic UI Semibold" FontSize="16" FontWeight="Bold" Foreground="White" DockPanel.Dock="Top"/>
+                    <DataGrid x:Name="battingTotalsDataGrid" FontFamily="Yu Gothic UI Semibold" GridLinesVisibility="Vertical" AlternatingRowBackground="#FFCBCBCB" AlternationCount="2" RowBackground="Gainsboro" HorizontalGridLinesBrush="Black" VerticalGridLinesBrush="#FF6C6C6C" HorizontalAlignment="Left" VerticalAlignment="Top" CanUserResizeRows="False" CanUserAddRows="False" CanUserDeleteRows="False" DockPanel.Dock="Top" IsReadOnly="True" CanUserResizeColumns="False"/>
+
+
+                    <Label x:Name="pitchingStatsLabel" Content="Regular Season Pitching Stats:" Margin="0,10,0,0" FontFamily="Yu Gothic UI Semibold" FontSize="16" FontWeight="Bold" Foreground="White" DockPanel.Dock="Top"/>
+                    <DataGrid x:Name="pitchingStatsDataGrid" FontFamily="Yu Gothic UI Semibold" GridLinesVisibility="Vertical" AlternatingRowBackground="#FFCBCBCB" AlternationCount="2" RowBackground="Gainsboro" HorizontalGridLinesBrush="Black" VerticalGridLinesBrush="#FF6C6C6C" HorizontalAlignment="Left" VerticalAlignment="Top" CanUserResizeRows="False" CanUserAddRows="False" CanUserDeleteRows="False" DockPanel.Dock="Top" IsReadOnly="True" CanUserResizeColumns="False"/>
+                    <Label x:Name="pitchingTotalsLabel" Content="MLB Career Pitching Stats" Margin="0,10,0,0" FontFamily="Yu Gothic UI Semibold" FontSize="16" FontWeight="Bold" Foreground="White" DockPanel.Dock="Top"/>
+                    <DataGrid x:Name="pitchingTotalsDataGrid" FontFamily="Yu Gothic UI Semibold" GridLinesVisibility="Vertical" AlternatingRowBackground="#FFCBCBCB" AlternationCount="2" RowBackground="Gainsboro" HorizontalGridLinesBrush="Black" VerticalGridLinesBrush="#FF6C6C6C" HorizontalAlignment="Left" VerticalAlignment="Top" CanUserResizeRows="False" CanUserAddRows="False" CanUserDeleteRows="False" DockPanel.Dock="Top" IsReadOnly="True" CanUserResizeColumns="False"/>
+
+
+                    <Label x:Name="fieldingStatsLabel" Content="Regular Season Fielding Stats:" Margin="0,10,0,0" FontFamily="Yu Gothic UI Semibold" FontSize="16" FontWeight="Bold" Foreground="White" DockPanel.Dock="Top"/>
+                    <DataGrid x:Name="fieldingStatsDataGrid" FontFamily="Yu Gothic UI Semibold" GridLinesVisibility="Vertical" AlternatingRowBackground="#FFCBCBCB" AlternationCount="2" RowBackground="Gainsboro" HorizontalGridLinesBrush="Black" VerticalGridLinesBrush="#FF6C6C6C" HorizontalAlignment="Left" VerticalAlignment="Top" CanUserResizeRows="False" CanUserAddRows="False" CanUserDeleteRows="False" DockPanel.Dock="Top" IsReadOnly="True" CanUserResizeColumns="False"/>
+                    <Label x:Name="fieldingTotalsLabel" Content="MLB Career Fielding Stats" Margin="0,10,0,0" FontFamily="Yu Gothic UI Semibold" FontSize="16" FontWeight="Bold" Foreground="White" DockPanel.Dock="Top"/>
+                    <DataGrid x:Name="fieldingTotalsDataGrid" FontFamily="Yu Gothic UI Semibold" GridLinesVisibility="Vertical" AlternatingRowBackground="#FFCBCBCB" AlternationCount="2" RowBackground="Gainsboro" HorizontalGridLinesBrush="Black" VerticalGridLinesBrush="#FF6C6C6C" HorizontalAlignment="Left" VerticalAlignment="Top" CanUserResizeRows="False" CanUserAddRows="False" CanUserDeleteRows="False" DockPanel.Dock="Top" IsReadOnly="True" CanUserResizeColumns="False"/>
+
+                    <Label x:Name="postBattingStatsLabel" Content="Post Season Batting Stats:" Margin="0,10,0,0" FontFamily="Yu Gothic UI Semibold" FontSize="16" FontWeight="Bold" Foreground="White" DockPanel.Dock="Top"/>
+                    <DataGrid x:Name="postBattingStatsDataGrid" FontFamily="Yu Gothic UI Semibold" GridLinesVisibility="Vertical" AlternatingRowBackground="#FFCBCBCB" AlternationCount="2" RowBackground="Gainsboro" HorizontalGridLinesBrush="Black" VerticalGridLinesBrush="#FF6C6C6C" HorizontalAlignment="Left" VerticalAlignment="Top" CanUserResizeRows="False" CanUserAddRows="False" CanUserDeleteRows="False" DockPanel.Dock="Top" IsReadOnly="True" CanUserResizeColumns="False"/>
+                    <Label x:Name="postBattingTotalsLabel" Content="MLB Career Post Season Batting Stats:" Margin="0,10,0,0" FontFamily="Yu Gothic UI Semibold" FontSize="16" FontWeight="Bold" Foreground="White" DockPanel.Dock="Top"/>
+                    <DataGrid x:Name="postBattingTotalsDataGrid" FontFamily="Yu Gothic UI Semibold" GridLinesVisibility="Vertical" AlternatingRowBackground="#FFCBCBCB" AlternationCount="2" RowBackground="Gainsboro" HorizontalGridLinesBrush="Black" VerticalGridLinesBrush="#FF6C6C6C" HorizontalAlignment="Left" VerticalAlignment="Top" CanUserResizeRows="False" CanUserAddRows="False" CanUserDeleteRows="False" DockPanel.Dock="Top" IsReadOnly="True" CanUserResizeColumns="False"/>
+
+                    <Label x:Name="postPitchingStatsLabel" Content="Post Season Pitching Stats:" Margin="0,10,0,0" FontFamily="Yu Gothic UI Semibold" FontSize="16" FontWeight="Bold" Foreground="White" DockPanel.Dock="Top"/>
+                    <DataGrid x:Name="postPitchingStatsDataGrid" FontFamily="Yu Gothic UI Semibold" GridLinesVisibility="Vertical" AlternatingRowBackground="#FFCBCBCB" AlternationCount="2" RowBackground="Gainsboro" HorizontalGridLinesBrush="Black" VerticalGridLinesBrush="#FF6C6C6C" HorizontalAlignment="Left" VerticalAlignment="Top" CanUserResizeRows="False" CanUserAddRows="False" CanUserDeleteRows="False" DockPanel.Dock="Top" IsReadOnly="True" CanUserResizeColumns="False"/>
+                    <Label x:Name="postPitchingTotalsLabel" Content="MLB Career Post Season Pitching Stats:" Margin="0,10,0,0" FontFamily="Yu Gothic UI Semibold" FontSize="16" FontWeight="Bold" Foreground="White" DockPanel.Dock="Top"/>
+                    <DataGrid x:Name="postPitchingTotalsDataGrid" FontFamily="Yu Gothic UI Semibold" GridLinesVisibility="Vertical" AlternatingRowBackground="#FFCBCBCB" AlternationCount="2" RowBackground="Gainsboro" HorizontalGridLinesBrush="Black" VerticalGridLinesBrush="#FF6C6C6C" HorizontalAlignment="Left" VerticalAlignment="Top" CanUserResizeRows="False" CanUserAddRows="False" CanUserDeleteRows="False" DockPanel.Dock="Top" IsReadOnly="True" CanUserResizeColumns="False"/>
+
+                    <Label x:Name="awardsLabel" Content="Awards" Margin="0,10,0,0" FontFamily="Yu Gothic UI Semibold" FontSize="16" FontWeight="Bold" Foreground="White" DockPanel.Dock="Top"/>
+                    <DataGrid x:Name="awardsDataGrid" FontFamily="Yu Gothic UI Semibold" GridLinesVisibility="Vertical" AlternatingRowBackground="#FFCBCBCB" AlternationCount="2" RowBackground="Gainsboro" HorizontalGridLinesBrush="Black" VerticalGridLinesBrush="#FF6C6C6C" HorizontalAlignment="Left" VerticalAlignment="Top" CanUserResizeRows="False" CanUserAddRows="False" CanUserDeleteRows="False" DockPanel.Dock="Top" IsReadOnly="True" CanUserResizeColumns="False"/>
+                </DockPanel>
+            </ScrollViewer>
+        </DockPanel>
+
+    </DockPanel>
+</Window>
