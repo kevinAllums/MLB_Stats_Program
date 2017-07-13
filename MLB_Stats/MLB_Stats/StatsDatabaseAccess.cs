@@ -21,7 +21,7 @@ namespace MLB_Stats
             conn = new SQLiteConnection(string.Format("DataSource={0};Version=3;", filename));
         }
 
-        public DataTable getPlayers(string nameFirst, string nameLast)
+        public DataTable GetPlayers(string nameFirst, string nameLast)
         {
             if (nameLast == "" || nameFirst == "")
             {
@@ -51,8 +51,8 @@ namespace MLB_Stats
 
                 DataTable results = new DataTable();
 
-                results = useSQLiteAdapter(nameLastMatches).Copy();
-                results.Merge(useSQLiteAdapter(nameFirstMatches));
+                results = UseSQLiteAdapter(nameLastMatches).Copy();
+                results.Merge(UseSQLiteAdapter(nameFirstMatches));
 
                 return results;
             }
@@ -72,10 +72,10 @@ namespace MLB_Stats
                 "AND nameLast LIKE '{1}' " +
                 "AND position!='M')", nameFirst, nameLast);
 
-            return useSQLiteAdapter(getPlayersWithBoth);
+            return UseSQLiteAdapter(getPlayersWithBoth);
         }
 
-        public DataTable getBattingStats(string playerID)
+        public DataTable GetBattingStats(string playerID)
         {
             string battingQuery = string.Format("SELECT " +
                 "b.yearID AS Year, " +
@@ -102,10 +102,10 @@ namespace MLB_Stats
                 "LEFT JOIN Teams t ON t.teamID = b.teamID AND t.yearID = b.yearID " +
                 "WHERE b.playerID IN (SELECT playerid FROM master WHERE (master.playerID = '{0}'));", playerID);
 
-            return useSQLiteAdapter(battingQuery);
+            return UseSQLiteAdapter(battingQuery);
         }
 
-        public DataTable getBattingTotals(string playerID)
+        public DataTable GetBattingTotals(string playerID)
         {
             string battingTotalsQuery = string.Format("SELECT " +
                 "TOTAL(b.G) AS G, " +
@@ -128,10 +128,10 @@ namespace MLB_Stats
                 "FROM Batting b " +
                 "WHERE b.playerID='{0}';", playerID);
 
-            return useSQLiteAdapter(battingTotalsQuery);
+            return UseSQLiteAdapter(battingTotalsQuery);
         }
 
-        public DataTable getPitchingStats(string playerID)
+        public DataTable GetPitchingStats(string playerID)
         {
             string pitchingQuery = string.Format("SELECT " +
                 "p.yearID AS Year, " +
@@ -166,10 +166,10 @@ namespace MLB_Stats
                 "LEFT JOIN Teams t ON t.teamID = p.teamID AND t.yearID = p.yearID " +
                 "WHERE p.playerID IN (SELECT playerid FROM master WHERE (master.playerID = '{0}'));", playerID);
 
-            return useSQLiteAdapter(pitchingQuery);
+            return UseSQLiteAdapter(pitchingQuery);
         }
 
-        public DataTable getPitchingTotals(string playerID)
+        public DataTable GetPitchingTotals(string playerID)
         {
             string pitchingTotalsQuery = string.Format("SELECT " +
                 "TOTAL(p.W) AS W, " +
@@ -200,10 +200,10 @@ namespace MLB_Stats
                 "FROM pitching p " +
                 "WHERE p.playerID='{0}';", playerID);
 
-            return useSQLiteAdapter(pitchingTotalsQuery);
+            return UseSQLiteAdapter(pitchingTotalsQuery);
         }
 
-        public DataTable getFieldingStats(string playerID)
+        public DataTable GetFieldingStats(string playerID)
         {
             string fieldingQuery = string.Format("SELECT " +
                 "f.yearID AS Year, " +
@@ -226,10 +226,10 @@ namespace MLB_Stats
                 "LEFT JOIN Teams t ON t.teamID = f.teamID AND t.yearID = f.yearID " +
                 "WHERE f.playerID IN (SELECT playerid FROM master WHERE (master.playerID = '{0}'));", playerID);
 
-            return useSQLiteAdapter(fieldingQuery);
+            return UseSQLiteAdapter(fieldingQuery);
         }
 
-        public DataTable getFieldingTotals(string playerID)
+        public DataTable GetFieldingTotals(string playerID)
         {
             string fieldingTotalsQuery = string.Format("SELECT " +
                 "TOTAL(f.G) AS G, " +
@@ -247,10 +247,10 @@ namespace MLB_Stats
                 "FROM fielding f " +
                 "WHERE f.playerID='{0}';", playerID);
 
-            return useSQLiteAdapter(fieldingTotalsQuery);
+            return UseSQLiteAdapter(fieldingTotalsQuery);
         }
 
-        public DataTable getBattingStatsPost(string playerID)
+        public DataTable GetBattingStatsPost(string playerID)
         {
             string battingPostQuery = string.Format("SELECT " +
                 "b.yearID AS Year, " +
@@ -278,10 +278,10 @@ namespace MLB_Stats
                 "LEFT JOIN Teams t ON t.teamID = b.teamID AND t.yearID = b.yearID " +
                 "WHERE b.playerID IN (SELECT playerid FROM master WHERE (master.playerID = '{0}'));", playerID);
 
-            return useSQLiteAdapter(battingPostQuery);
+            return UseSQLiteAdapter(battingPostQuery);
         }
 
-        public DataTable getBattingTotalsPost(string playerID)
+        public DataTable GetBattingTotalsPost(string playerID)
         {
             string battingTotalsPostQuery = string.Format("SELECT " +
                 "TOTAL(b.G) AS G, " +
@@ -304,10 +304,10 @@ namespace MLB_Stats
                 "FROM battingpost b " +
                 "WHERE b.playerID='{0}';", playerID);
 
-            return useSQLiteAdapter(battingTotalsPostQuery);
+            return UseSQLiteAdapter(battingTotalsPostQuery);
         }
 
-        public DataTable getPitchingStatsPost(string playerID)
+        public DataTable GetPitchingStatsPost(string playerID)
         {
             string pitchingPostQuery = string.Format("SELECT " +
                 "p.yearID AS Year, " +
@@ -343,10 +343,10 @@ namespace MLB_Stats
                 "LEFT JOIN Teams t ON t.teamID = p.teamID AND t.yearID = p.yearID " +
                 "WHERE p.playerID IN (SELECT playerid FROM master WHERE (master.playerID = '{0}'));", playerID);
 
-            return useSQLiteAdapter(pitchingPostQuery);
+            return UseSQLiteAdapter(pitchingPostQuery);
         }
 
-        public DataTable getPitchingTotalsPost(string playerID)
+        public DataTable GetPitchingTotalsPost(string playerID)
         {
             string pitchingTotalsPostQuery = string.Format("SELECT " +
                 "TOTAL(p.W) AS W, " +
@@ -377,10 +377,10 @@ namespace MLB_Stats
                 "FROM pitchingpost p " +
                 "WHERE p.playerID='{0}';", playerID);
 
-            return useSQLiteAdapter(pitchingTotalsPostQuery);
+            return UseSQLiteAdapter(pitchingTotalsPostQuery);
         }
 
-        public DataTable getAwards(string playerID)
+        public DataTable GetAwards(string playerID)
         {
             string awardsQuery = string.Format("SELECT " +
                 "a.yearID AS Year, " +
@@ -390,19 +390,19 @@ namespace MLB_Stats
                 "FROM awardsplayers a " +
                 "WHERE a.playerID = '{0}';", playerID);
 
-            return useSQLiteAdapter(awardsQuery);
+            return UseSQLiteAdapter(awardsQuery);
         }
 
-        public string getHallOfFame(string playerID)
+        public string GetHallOfFame(string playerID)
         {
             string hallOfFameQuery = string.Format("SELECT h.yearid AS Year " +
                 "FROM halloffame h " +
                 "WHERE h.playerID = '{0}' AND h.inducted = 'Y';", playerID);
 
-            return useSQLiteExecuteScalar(hallOfFameQuery);
+            return UseSQLiteExecuteScalar(hallOfFameQuery);
         }
 
-        public DataTable getBasicInfo(string playerID)
+        public DataTable GetBasicInfo(string playerID)
         {
             string basicInfoQuery = string.Format("SELECT m.nameFirst, " +
                 "m.nameLast, " +
@@ -428,19 +428,19 @@ namespace MLB_Stats
                 "FROM master m " +
                 "WHERE m.playerID = '{0}';", playerID);
 
-            return useSQLiteAdapter(basicInfoQuery);
+            return UseSQLiteAdapter(basicInfoQuery);
         }
         // TEAM STUFF
 
         // need to rework this and team search
-        public DataTable getYearsTeams()
+        public DataTable GetYearsTeams()
         {
             string yearsAndTeams = "SELECT yearID, name FROM teams ORDER BY yearID, name;";
 
-            return useSQLiteAdapter(yearsAndTeams);
+            return UseSQLiteAdapter(yearsAndTeams);
         }
 
-        public DataTable getTeamBasicInfo(string yearID, string name)
+        public DataTable GetTeamBasicInfo(string yearID, string name)
         {
             string teamBasicInfoQuery = string.Format("SELECT " +
                 "t.yearID, " +
@@ -460,19 +460,19 @@ namespace MLB_Stats
                 "FROM teams t " +
                 "WHERE yearID={0} AND name=\"{1}\";", yearID, name);
 
-            return useSQLiteAdapter(teamBasicInfoQuery);
+            return UseSQLiteAdapter(teamBasicInfoQuery);
         }
 
-        public string getTeamID(string yearID, string name)
+        public string GetTeamID(string yearID, string name)
         {
             string teamIDQuery = string.Format("SELECT teamID " +
                 "FROM teams " +
                 "WHERE yearID={0} AND name=\"{1}\";", yearID, name);
 
-            return useSQLiteExecuteScalar(teamIDQuery);
+            return UseSQLiteExecuteScalar(teamIDQuery);
         }
 
-        public DataTable getTeamBattingStats(string yearID, string teamID)
+        public DataTable GetTeamBattingStats(string yearID, string teamID)
         {
             string teamBattingQuery = string.Format("SELECT " +
                 "m.nameFirst || ' ' || m.NameLast AS Player, " +
@@ -500,10 +500,10 @@ namespace MLB_Stats
                 "AND b.playerID = m.playerID " +
                 "ORDER BY nameLast;", yearID, teamID);
 
-            return useSQLiteAdapter(teamBattingQuery);
+            return UseSQLiteAdapter(teamBattingQuery);
         }
 
-        public DataTable getTeamPitchingStats(string yearID, string teamID)
+        public DataTable GetTeamPitchingStats(string yearID, string teamID)
         {
             string teamPitchingQuery = string.Format("SELECT " +
                 "m.nameFirst || ' ' || m.NameLast AS Player, " +
@@ -539,10 +539,10 @@ namespace MLB_Stats
                 "AND p.playerID = m.playerID " +
                 "ORDER BY nameLast;", yearID, teamID);
 
-            return useSQLiteAdapter(teamPitchingQuery);
+            return UseSQLiteAdapter(teamPitchingQuery);
         }
 
-        public DataTable getTeamBattingStatsPost(string yearID, string teamID)
+        public DataTable GetTeamBattingStatsPost(string yearID, string teamID)
         {
             string teamBattingPostQuery = string.Format("SELECT " +
                 "b.round, " +
@@ -571,10 +571,10 @@ namespace MLB_Stats
                 "AND b.playerID = m.playerID " +
                 "ORDER BY b.round;", yearID, teamID);
 
-            return useSQLiteAdapter(teamBattingPostQuery);
+            return UseSQLiteAdapter(teamBattingPostQuery);
         }
 
-        public DataTable getTeamPitchingStatsPost(string yearID, string teamID)
+        public DataTable GetTeamPitchingStatsPost(string yearID, string teamID)
         {
             string teamPitchingPostQuery = string.Format("SELECT " +
                 "p.round, " +
@@ -611,11 +611,11 @@ namespace MLB_Stats
                 "AND p.playerID = m.playerID " +
                 "ORDER BY p.round;", yearID, teamID);
 
-            return useSQLiteAdapter(teamPitchingPostQuery);
+            return UseSQLiteAdapter(teamPitchingPostQuery);
         }
 
         // Database access
-        public string useSQLiteExecuteScalar(string query)
+        public string UseSQLiteExecuteScalar(string query)
         {
             string result = "";
             try
@@ -643,7 +643,7 @@ namespace MLB_Stats
             return result;
         }
 
-        public DataTable useSQLiteAdapter(string query)
+        public DataTable UseSQLiteAdapter(string query)
         {
             try
             {

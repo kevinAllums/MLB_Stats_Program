@@ -43,23 +43,23 @@ namespace MLB_Stats
             search.Show();
         }
 
-        private void playerSearchButton_Click(object sender, RoutedEventArgs e)
+        private void PlayerSearchButton_Click(object sender, RoutedEventArgs e)
         {
             playerSearchDockPanel.Visibility = Visibility.Visible;
             this.Title = "Player Search";
             buttonPanel.Visibility = Visibility.Collapsed;
         }
 
-        private void teamSearchButton_Click(object sender, RoutedEventArgs e)
+        private void TeamSearchButton_Click(object sender, RoutedEventArgs e)
         {
             teamSearchDockPanel.Visibility = Visibility.Visible;
             this.Title = "Team Search";
             buttonPanel.Visibility = Visibility.Collapsed;
-            doTeamStuff();
+            DoTeamStuff();
         }
 
         #region teamSearch
-        private void getYears()
+        private void GetYears()
         {
             DataTable results;
             string query = "SELECT DISTINCT yearID FROM teams ORDER BY yearID DESC;";
@@ -76,7 +76,7 @@ namespace MLB_Stats
             yearComboBox.SelectedIndex = 0;
         }
 
-        private void getTeams()
+        private void GetTeams()
         {
             DataTable results;
             string query = string.Format("SELECT name FROM teams WHERE yearID={0} ORDER BY name ASC;", year);
@@ -92,9 +92,9 @@ namespace MLB_Stats
             }
         }
 
-        private void doTeamStuff()
+        private void DoTeamStuff()
         {
-            getYears();
+            GetYears();
         }
 
         public DataTable GetResults(string query)
@@ -127,7 +127,7 @@ namespace MLB_Stats
             return DT;
         }
 
-        private void teamComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void TeamComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (teamComboBox.SelectedItem != null)
             {
@@ -135,14 +135,14 @@ namespace MLB_Stats
             }
         }
 
-        private void yearComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void YearComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             year = yearComboBox.SelectedItem.ToString();
             teamComboBox.Items.Clear();
-            getTeams();
+            GetTeams();
         }
 
-        private void executeTeamSearchButton_Click(object sender, RoutedEventArgs e)
+        private void ExecuteTeamSearchButton_Click(object sender, RoutedEventArgs e)
         {
             if (yearComboBox.SelectedItem != null && teamComboBox.SelectedItem != null)
             {
@@ -166,13 +166,13 @@ namespace MLB_Stats
 
         #endregion
 
-        private void executePlayerSearchButton_Click(object sender, RoutedEventArgs e)
+        private void ExecutePlayerSearchButton_Click(object sender, RoutedEventArgs e)
         {
             Console.WriteLine(playerSearchTextBox.Text.ToString());
-            validateInput(playerSearchTextBox.Text.ToString());
+            ValidateInput(playerSearchTextBox.Text.ToString());
         }
 
-        private void validateInput(string input)
+        private void ValidateInput(string input)
         {
             Regex r = new Regex("^[a-zA-Z ]*$");
 
@@ -225,7 +225,7 @@ namespace MLB_Stats
 
             StatsDatabaseAccess statsDatabase = new StatsDatabaseAccess();
 
-            players = statsDatabase.getPlayers(nameFirst, nameLast);
+            players = statsDatabase.GetPlayers(nameFirst, nameLast);
 
             int numberRows = players.Rows.Count;
             int numberColumns = players.Columns.Count;
@@ -275,7 +275,7 @@ namespace MLB_Stats
             playerSearchResultsStackPanel.Visibility = Visibility.Visible;
         }
 
-        private void showPlayerStatsButton_Click(object sender, RoutedEventArgs e)
+        private void ShowPlayerStatsButton_Click(object sender, RoutedEventArgs e)
         {
             if (listView001.SelectedItems.Count == 1)
             {

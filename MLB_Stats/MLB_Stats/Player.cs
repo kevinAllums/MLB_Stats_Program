@@ -29,25 +29,25 @@ namespace MLB_Stats
         public Player(string playerID)
         {
             this.playerID = playerID;
-            this.basicInfo = statsDatabaseAccess.getBasicInfo(this.playerID);
+            this.basicInfo = statsDatabaseAccess.GetBasicInfo(this.playerID);
 
-            this.battingStats = statsDatabaseAccess.getBattingStats(this.playerID);
-            this.battingTotals = statsDatabaseAccess.getBattingTotals(this.playerID);
+            this.battingStats = statsDatabaseAccess.GetBattingStats(this.playerID);
+            this.battingTotals = statsDatabaseAccess.GetBattingTotals(this.playerID);
 
-            this.pitchingStats = statsDatabaseAccess.getPitchingStats(this.playerID);
-            this.pitchingTotals = statsDatabaseAccess.getPitchingTotals(this.playerID);
+            this.pitchingStats = statsDatabaseAccess.GetPitchingStats(this.playerID);
+            this.pitchingTotals = statsDatabaseAccess.GetPitchingTotals(this.playerID);
 
-            this.fieldingStats = statsDatabaseAccess.getFieldingStats(this.playerID);
-            this.fieldingTotals = statsDatabaseAccess.getFieldingTotals(this.playerID);
+            this.fieldingStats = statsDatabaseAccess.GetFieldingStats(this.playerID);
+            this.fieldingTotals = statsDatabaseAccess.GetFieldingTotals(this.playerID);
 
-            this.battingStatsPost = statsDatabaseAccess.getBattingStatsPost(this.playerID);
-            this.battingTotalsPost = statsDatabaseAccess.getBattingTotalsPost(this.playerID);
+            this.battingStatsPost = statsDatabaseAccess.GetBattingStatsPost(this.playerID);
+            this.battingTotalsPost = statsDatabaseAccess.GetBattingTotalsPost(this.playerID);
 
-            this.pitchingStatsPost = statsDatabaseAccess.getPitchingStatsPost(this.playerID);
-            this.pitchingTotalsPost = statsDatabaseAccess.getPitchingTotalsPost(this.playerID);
+            this.pitchingStatsPost = statsDatabaseAccess.GetPitchingStatsPost(this.playerID);
+            this.pitchingTotalsPost = statsDatabaseAccess.GetPitchingTotalsPost(this.playerID);
 
-            this.awards = statsDatabaseAccess.getAwards(this.playerID);
-            this.hallOfFame = statsDatabaseAccess.getHallOfFame(this.playerID);
+            this.awards = statsDatabaseAccess.GetAwards(this.playerID);
+            this.hallOfFame = statsDatabaseAccess.GetHallOfFame(this.playerID);
         }
 
         public string PlayerID

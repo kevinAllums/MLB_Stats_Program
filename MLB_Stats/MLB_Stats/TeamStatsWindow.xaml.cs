@@ -102,7 +102,7 @@ namespace MLB_Stats
             // remove label
             else
             {
-                removeElementFromdockPanel("teamInfoPanel", "winnerLabel");
+                RemoveElementFromdockPanel("teamInfoPanel", "winnerLabel");
             }
             #endregion
 
@@ -117,8 +117,8 @@ namespace MLB_Stats
             }
             else
             {
-                removeElementFromdockPanel("teamInfoPanel", "teamBattingStatsLabel");
-                removeElementFromdockPanel("teamInfoPanel", "teamBattingStatsDataGrid");
+                RemoveElementFromdockPanel("teamInfoPanel", "teamBattingStatsLabel");
+                RemoveElementFromdockPanel("teamInfoPanel", "teamBattingStatsDataGrid");
             }
             #endregion
 
@@ -130,8 +130,8 @@ namespace MLB_Stats
             }
             else
             {
-                removeElementFromdockPanel("teamInfoPanel", "teamPitchingStatsLabel");
-                removeElementFromdockPanel("teamInfoPanel", "teamPitchingStatsDataGrid");
+                RemoveElementFromdockPanel("teamInfoPanel", "teamPitchingStatsLabel");
+                RemoveElementFromdockPanel("teamInfoPanel", "teamPitchingStatsDataGrid");
             }
             #endregion
 
@@ -145,8 +145,8 @@ namespace MLB_Stats
             }
             else
             {
-                removeElementFromdockPanel("teamInfoPanel", "teamPostBattingStatsLabel");
-                removeElementFromdockPanel("teamInfoPanel", "teamPostBattingStatsDataGrid");
+                RemoveElementFromdockPanel("teamInfoPanel", "teamPostBattingStatsLabel");
+                RemoveElementFromdockPanel("teamInfoPanel", "teamPostBattingStatsDataGrid");
             }
             #endregion
 
@@ -158,14 +158,13 @@ namespace MLB_Stats
             }
             else
             {
-                removeElementFromdockPanel("teamInfoPanel", "teamPostPitchingStatsLabel");
-                removeElementFromdockPanel("teamInfoPanel", "teamPostPitchingStatsDataGrid");
+                RemoveElementFromdockPanel("teamInfoPanel", "teamPostPitchingStatsLabel");
+                RemoveElementFromdockPanel("teamInfoPanel", "teamPostPitchingStatsDataGrid");
             }
             #endregion
         }
 
-
-        private void removeElementFromdockPanel(string parent, string child)
+        private void RemoveElementFromdockPanel(string parent, string child)
         {
             var element = teamInfoPanel.Children.OfType<FrameworkElement>().FirstOrDefault(e => e.Name == child);
             if (element != null)

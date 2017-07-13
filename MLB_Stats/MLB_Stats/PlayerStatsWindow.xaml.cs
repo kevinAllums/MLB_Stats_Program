@@ -157,10 +157,10 @@ namespace MLB_Stats
             }
             else
             {
-                removeElementFromdockPanel002("dockPanel002", "battingStatsLabel");
-                removeElementFromdockPanel002("dockPanel002", "battingStatsDataGrid");
-                removeElementFromdockPanel002("dockPanel002", "battingTotalsLabel");
-                removeElementFromdockPanel002("dockPanel002", "battingTotalsDataGrid");
+                RemoveElementFromdockPanel002("dockPanel002", "battingStatsLabel");
+                RemoveElementFromdockPanel002("dockPanel002", "battingStatsDataGrid");
+                RemoveElementFromdockPanel002("dockPanel002", "battingTotalsLabel");
+                RemoveElementFromdockPanel002("dockPanel002", "battingTotalsDataGrid");
             }
             #endregion
 
@@ -172,10 +172,10 @@ namespace MLB_Stats
             }
             else
             {
-                removeElementFromdockPanel002("dockPanel002", "pitchingStatsLabel");
-                removeElementFromdockPanel002("dockPanel002", "pitchingStatsDataGrid");
-                removeElementFromdockPanel002("dockPanel002", "pitchingTotalsLabel");
-                removeElementFromdockPanel002("dockPanel002", "pitchingTotalsDataGrid");
+                RemoveElementFromdockPanel002("dockPanel002", "pitchingStatsLabel");
+                RemoveElementFromdockPanel002("dockPanel002", "pitchingStatsDataGrid");
+                RemoveElementFromdockPanel002("dockPanel002", "pitchingTotalsLabel");
+                RemoveElementFromdockPanel002("dockPanel002", "pitchingTotalsDataGrid");
             }
             #endregion
 
@@ -187,10 +187,10 @@ namespace MLB_Stats
             }
             else
             {
-                removeElementFromdockPanel002("dockPanel002", "fieldingStatsLabel");
-                removeElementFromdockPanel002("dockPanel002", "fieldingStatsDataGrid");
-                removeElementFromdockPanel002("dockPanel002", "fieldingTotalsLabel");
-                removeElementFromdockPanel002("dockPanel002", "fieldingTotalsDataGrid");
+                RemoveElementFromdockPanel002("dockPanel002", "fieldingStatsLabel");
+                RemoveElementFromdockPanel002("dockPanel002", "fieldingStatsDataGrid");
+                RemoveElementFromdockPanel002("dockPanel002", "fieldingTotalsLabel");
+                RemoveElementFromdockPanel002("dockPanel002", "fieldingTotalsDataGrid");
             }
             #endregion
 
@@ -202,10 +202,10 @@ namespace MLB_Stats
             }
             else
             {
-                removeElementFromdockPanel002("dockPanel002", "postBattingStatsLabel");
-                removeElementFromdockPanel002("dockPanel002", "postBattingStatsDataGrid");
-                removeElementFromdockPanel002("dockPanel002", "postBattingTotalsLabel");
-                removeElementFromdockPanel002("dockPanel002", "postBattingTotalsDataGrid");
+                RemoveElementFromdockPanel002("dockPanel002", "postBattingStatsLabel");
+                RemoveElementFromdockPanel002("dockPanel002", "postBattingStatsDataGrid");
+                RemoveElementFromdockPanel002("dockPanel002", "postBattingTotalsLabel");
+                RemoveElementFromdockPanel002("dockPanel002", "postBattingTotalsDataGrid");
             }
             #endregion
 
@@ -217,10 +217,10 @@ namespace MLB_Stats
             }
             else
             {
-                removeElementFromdockPanel002("dockPanel002", "postPitchingStatsLabel");
-                removeElementFromdockPanel002("dockPanel002", "postPitchingStatsDataGrid");
-                removeElementFromdockPanel002("dockPanel002", "postPitchingTotalsLabel");
-                removeElementFromdockPanel002("dockPanel002", "postPitchingTotalsDataGrid");
+                RemoveElementFromdockPanel002("dockPanel002", "postPitchingStatsLabel");
+                RemoveElementFromdockPanel002("dockPanel002", "postPitchingStatsDataGrid");
+                RemoveElementFromdockPanel002("dockPanel002", "postPitchingTotalsLabel");
+                RemoveElementFromdockPanel002("dockPanel002", "postPitchingTotalsDataGrid");
             }
             #endregion
 
@@ -231,13 +231,13 @@ namespace MLB_Stats
             }
             else
             {
-                removeElementFromdockPanel002("dockPanel002", "awardsLabel");
-                removeElementFromdockPanel002("dockPanel002", "awardsDataGrid");
+                RemoveElementFromdockPanel002("dockPanel002", "awardsLabel");
+                RemoveElementFromdockPanel002("dockPanel002", "awardsDataGrid");
             }
             #endregion
         }
 
-        private void removeElementFromdockPanel002(string parent, string child)
+        private void RemoveElementFromdockPanel002(string parent, string child)
         {
             var element = dockPanel002.Children.OfType<FrameworkElement>().FirstOrDefault(e => e.Name == child);
             if (element != null)

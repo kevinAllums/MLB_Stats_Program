@@ -25,12 +25,12 @@ namespace MLB_Stats
         {
             this.yearID = yearID;
             this.name = name;
-            this.teamID = statsDatabaseAccess.getTeamID(this.yearID, this.name);
-            this.teamBasicInfo = statsDatabaseAccess.getTeamBasicInfo(this.yearID, this.name);
-            this.teamBattingStats = statsDatabaseAccess.getTeamBattingStats(this.yearID, this.teamID);
-            this.teamPitchingStats = statsDatabaseAccess.getTeamPitchingStats(this.yearID, this.teamID);
-            this.teamBattingStatsPost = statsDatabaseAccess.getTeamBattingStatsPost(this.yearID, this.teamID);
-            this.teamPitchingStatsPost = statsDatabaseAccess.getTeamPitchingStatsPost(this.yearID, this.teamID);
+            this.teamID = statsDatabaseAccess.GetTeamID(this.yearID, this.name);
+            this.teamBasicInfo = statsDatabaseAccess.GetTeamBasicInfo(this.yearID, this.name);
+            this.teamBattingStats = statsDatabaseAccess.GetTeamBattingStats(this.yearID, this.teamID);
+            this.teamPitchingStats = statsDatabaseAccess.GetTeamPitchingStats(this.yearID, this.teamID);
+            this.teamBattingStatsPost = statsDatabaseAccess.GetTeamBattingStatsPost(this.yearID, this.teamID);
+            this.teamPitchingStatsPost = statsDatabaseAccess.GetTeamPitchingStatsPost(this.yearID, this.teamID);
         }
 
         public string YearID
