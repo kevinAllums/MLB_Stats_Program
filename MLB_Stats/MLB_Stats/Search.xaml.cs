@@ -58,7 +58,6 @@ namespace MLB_Stats
             DoTeamStuff();
         }
 
-        #region teamSearch
         private void GetYears()
         {
             DataTable results;
@@ -163,8 +162,6 @@ namespace MLB_Stats
             }
 
         }
-
-        #endregion
 
         private void ExecutePlayerSearchButton_Click(object sender, RoutedEventArgs e)
         {
