@@ -143,7 +143,14 @@ namespace MLB_Stats
                     player.BasicInfo.Rows[0][9].ToString());
             }
 
-            string testLable2String = givenName + birthDate + birthLocation + debut + lastGame + deathDate;
+            string hof = "";
+            if (player.HallOfFame != null)
+            {
+                hof = string.Format("\nHall of Fame {0} ", player.HallOfFame.ToString());
+            }
+            //Console.WriteLine(hof.ToString());
+
+            string testLable2String = givenName + birthDate + birthLocation + debut + lastGame + deathDate + hof;
             testLable2.Content = testLable2String;
 
             //-------------------------------------------------------------------------------------------------
